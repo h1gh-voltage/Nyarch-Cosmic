@@ -2,6 +2,15 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Ezarcher custom package list
 #
+
+# Nyarch Apps
+catgirldownloader
+nekoplay
+
+# Nyarch Repo 
+nyarch-mirrorlist
+nyarch-keyring
+
 alsa-utils
 amd-ucode
 arch-install-scripts
@@ -51,7 +60,7 @@ ldns
 less
 libfido2
 libusb-compat
-linux-lts
+linux
 linux-atm
 linux-firmware
 linux-firmware-marvell
@@ -174,7 +183,7 @@ libburn
 libisofs
 libisoburn
 libblockdev
-linux-lts-headers
+linux-headers
 logrotate
 lsb-release
 lsof
@@ -375,8 +384,8 @@ xdg-desktop-portal-cosmic
 xpdf
 
 # Display Manager
-cosmic-greeter
-greetd
+#cosmic-greeter
+#greetd
 
 # Calamares make dependencies
 dmidecode
@@ -412,7 +421,3 @@ yaml-cpp
 calamares
 ckbcomp
 mkinitcpio-openswap
-
-# AUR
-downgrade
-trizen

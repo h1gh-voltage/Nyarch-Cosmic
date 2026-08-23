@@ -1,0 +1,6 @@
+[terminal]
+vt = 7
+
+[default_session]
+command = "/usr/bin/dbus-run-session env XDG_SESSION_TYPE=wayland XDG_CURRENT_DESKTOP=COSMIC /usr/bin/start-cosmic 2>&1 | /usr/bin/logger -t cosmic-greeter"
+user = "live"

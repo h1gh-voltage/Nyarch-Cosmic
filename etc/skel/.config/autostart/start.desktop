@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=first_start
+Exec=/usr/share/nyarcher/Scripts/autostart.sh
+StartupNotify=false
+Terminal=false
+X-GNOME-Autostart-enabled=true

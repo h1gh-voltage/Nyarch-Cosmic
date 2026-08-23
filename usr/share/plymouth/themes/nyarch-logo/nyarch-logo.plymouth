@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=nyarch-logo
+Description=Nyarch Linux boot splash with face-cycling logo and paw print password
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/nyarch-logo
+ScriptFile=/usr/share/plymouth/themes/nyarch-logo/nyarch-logo.script

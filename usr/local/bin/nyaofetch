@@ -1,0 +1,23 @@
+#!/bin/bash
+EMPTY=""
+if [ "$KITTY_WINDOW_ID" != "$EMPTY" ] || [ "$KONSOLE_VERSION" != "$EMPTY" ]; then
+        if [ $(tput cols) -gt "105" ]; then
+            fastfetch --config ~/.config/fastfetch/config_extended.jsonc
+        else
+            fastfetch
+        fi
+else
+        if [ $(tput cols) -gt "125" ]; then
+                fastfetch --config ~/.config/fastfetch/config_extended.jsonc --logo ~/.config/fastfetch/ascii90 --logo-type file
+        elif [ $(tput cols) -gt "110" ]; then
+                fastfetch --config ~/.config/fastfetch/config_extended.jsonc --logo ~/.config/fastfetch/ascii70 --logo-type file
+        elif [ $(tput cols) -gt "100" ]; then
+                fastfetch --config ~/.config/fastfetch/config_extended.jsonc --logo ~/.config/fastfetch/ascii60 --logo-type file
+        elif [ $(tput cols) -gt "90" ]; then
+                fastfetch --logo ~/.config/fastfetch/ascii50 --logo-type file
+        else
+                fastfetch --logo ~/.config/fastfetch/ascii50 --logo-type file
+        fi
+fi
+
+

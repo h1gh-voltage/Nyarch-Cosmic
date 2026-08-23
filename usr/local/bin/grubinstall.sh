@@ -1,28 +1,28 @@
 #!/bin/bash
 
 # grubinstall script
-# Revision: 2606-1 -- by eznix (https://sourceforge.net/projects/ezarch/)
+# Revision: 25.05.02 -- by eznix (https://sourceforge.net/projects/ezarch/)
 # (GNU/General Public License version 3.0)
 
 # Assign output of findmount to variable
 
-TPDEV=$(findmnt -n -o SOURCE -M /)
+TPDEV=$(findmnt -n -o SOURCE /)
 
 # Function to find mountpoint of / and test if on NvME or Sata device
 
 _findmount () {
   if
     [ -z "${TPDEV##*nvme*}" ]; then
-    LRDEV=$(findmnt -n -o SOURCE -M / | cut -c1-12)
+    LRDEV=$(findmnt -n -o SOURCE / | cut -c1-12)
   else
-    LRDEV=$(findmnt -n -o SOURCE -M / | cut -c1-8)
+    LRDEV=$(findmnt -n -o SOURCE / | cut -c1-8)
   fi
 }
 
 # Test for EFI boot and either run grub-install for EFI or move to findmount
 
 if [ -d "/sys/firmware/efi" ]; then
-  grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=ezarcher --recheck
+  grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=Nyarch --recheck
   grub-mkconfig -o /boot/grub/grub.cfg
 else
   _findmount

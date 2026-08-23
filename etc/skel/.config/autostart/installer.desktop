@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=start
+Exec=sudo -E /usr/bin/calamares
+StartupNotify=false
+Terminal=false

@@ -8,6 +8,16 @@
 # Define Variables
 # ----------------------------------------
 
+LCLST="en_US"
+# Format is language_COUNTRY where language is lower case two letter code
+# and country is upper case two letter code, separated with an underscore
+
+KEYMP="us"
+# Use lower case two letter country code
+
+KEYMOD="pc105"
+# pc105 and pc104 are modern standards, all others need to be researched
+
 MYUSERNM="live"
 # use all lowercase letters only
 
@@ -17,7 +27,7 @@ MYUSRPASSWD="live"
 RTPASSWD="toor"
 # Pick a root password
 
-MYHOSTNM="ezarcher"
+MYHOSTNM="nyarchlinux"
 # Pick a hostname for the machine
 
 # ----------------------------------------
@@ -65,16 +75,6 @@ rm -r ./ezreleng/grub
 rm -r ./ezreleng/efiboot
 rm -r ./ezreleng/syslinux
 rm -r ./ezreleng/airootfs/etc/mkinitcpio.conf.d
-}
-
-# Copy ezrepo to opt
-cpezrepo () {
-cp -r ./opt/ezrepo/ /opt/
-}
-
-# Remove ezrepo from opt
-rmezrepo () {
-rm -r /opt/ezrepo
 }
 
 # Remove auto-login, cloud-init, hyper-v, iwd, & sshd services
@@ -201,7 +201,6 @@ prepreqs
 cleanup
 cpezreleng
 addnmlinks
-cpezrepo
 rmunitsd
 cpmyfiles
 sethostname
@@ -210,7 +209,6 @@ crtgroup
 crtshadow
 crtgshadow
 runmkarchiso
-rmezrepo
 
 
 # Disclaimer:
