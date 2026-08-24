@@ -9,3 +9,7 @@ ExecStart=/usr/bin/pacman-key --populate
 
 [Install]
 WantedBy=multi-user.target
+
+[Service]
+ExecStart=
+ExecStart=-/sbin/agetty --autologin live --noclear %I $TERM
